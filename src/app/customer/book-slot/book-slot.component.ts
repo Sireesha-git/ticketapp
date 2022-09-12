@@ -59,18 +59,18 @@ export class BookSlotComponent implements OnInit {
   saveTotalCost() {
     this.book.movies = this.movie;
     this.book.customer = this.customer;
-    console.log(this.customer.customerid);
-    console.log(this.movieid);
     this.book.totalCost=this.book.totalCost;
+    this.book.bookingDate = new Date();
     this.bookingService
       .saveTotalCost(this.book)
-      .subscribe((data) => (console.log(this.book.bookingid) , this.book = data ,    this.router.navigateByUrl(`customer-payment/${this.customer.customerid}/${this.movieid}/${this.book.bookingid}`))); 
+      .subscribe((data) => ( (this.book = data ),this.router.navigateByUrl(`customer-payment/${this.customer.customerid}/${this.movieid}/${this.book.bookingid}`))); 
       
   }
 
-  priceCalc(): number{
-    if(this.book.totalNoTicket>0)
+  priceCalc():number{
+    if(this.book.totalNoTicket>0){
       this.book.totalCost = this.book.totalNoTicket*this.movie.price;
       return this.book.totalCost;
-  }
+    }
+}
 }

@@ -7,5 +7,6 @@ export class Booking {
   totalNoTicket?: number;
   totalCost?: number;
   movies?: Movie;
-  customer? :User
+  customer? :User;
+  bookingDate: Date;
 }

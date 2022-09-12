@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { RegistrationService } from 'src/app/services/registration.service';
-// import { ApiService } from 'src/app/services/api.service';
+
 
 @Component({
   selector: 'app-main-page',
@@ -22,17 +22,15 @@ export class MainPageComponent implements OnInit {
   ) {}
   
   ngOnInit(): void {
-    let Response = this.http
-      .get('http://localhost:8080/Movies')
-      .subscribe((data) => (this.movie = data));
+    let Response = this.http.get('http://localhost:8080/Movies').subscribe((data) => (this.movie = data));
     this.getByUserId(this.actRoute.snapshot.params['customerid']);
   }
 
   getByUserId(customerid: any) {
     this.registrationService.getUserByid(customerid).subscribe((data) => {
-      console.log(customerid),
-        (this.customer = data),
-        console.log(this.customer);
+      
+        (this.customer = data);
+        
     });
   }
   

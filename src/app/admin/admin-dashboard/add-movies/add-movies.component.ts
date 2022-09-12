@@ -34,7 +34,7 @@ export class AddMoviesComponent implements OnInit {
     this.movie.theatre = this.theatre;
     this.movieService
       .addMovie(this.movie)
-      .subscribe((data) => (console.log(data), (this.messgae = data)));
+      .subscribe((data) => this.messgae = data);
     this.router.navigateByUrl(`/admin-dashboard/movie/${this.theatreid}`);
   }
 }

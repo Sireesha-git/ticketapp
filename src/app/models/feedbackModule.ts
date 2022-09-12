@@ -5,5 +5,7 @@ export class FeedbackModule {
   comments?: string;
   rating?: string;
   customer ?:User;
-  constructor(){}
+  constructor(){ /* TODO document why this constructor is empty */ 
+    
+  }
 }

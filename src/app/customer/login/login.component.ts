@@ -15,7 +15,11 @@ export class LoginComponent implements OnInit {
 
   constructor(private _service: RegistrationService, private _router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // TODO document why this method 'ngOnInit' is empty
+  
+    
+  }
 
   goCustomer(customerid: number) {
     this._router.navigateByUrl(`/main-page/${customerid}`);
@@ -24,7 +28,7 @@ export class LoginComponent implements OnInit {
     console.log(this.loginUser);
     this._service.loginUserFromRemote(this.login).subscribe({
       next: (data) => {
-        console.log('response'), this.goCustomer(data);
+        this.goCustomer(data);
       },
       error: (err) => {
         alert('error');

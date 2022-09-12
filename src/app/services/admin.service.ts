@@ -16,7 +16,7 @@ export class AdminService {
   constructor(private _http: HttpClient) {}
 
   loginCheck(loginDetails: any) {
-    return this._http.post<Boolean>(
+    return this._http.post<boolean>(
       this.apiUrl,
       loginDetails,
       this.httpOptions

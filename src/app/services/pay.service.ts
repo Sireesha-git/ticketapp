@@ -16,7 +16,7 @@ export class PayService {
   constructor(private _http: HttpClient) {}
 
   paymentCheck(paymentDetails) {
-    return this._http.post<Boolean>(
+    return this._http.post<boolean>(
       this.apiUrl,
       paymentDetails,
       this.httpOptions

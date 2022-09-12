@@ -14,7 +14,10 @@ export class RegistrationComponent implements OnInit {
 
   constructor(private service: RegistrationService, private _router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // TODO document why this method 'ngOnInit' is empty
+  
+  }
   registration() {
     this.service.saveUser(this.user).subscribe({
       next: (data) => {

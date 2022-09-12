@@ -11,7 +11,7 @@ const movieUrl = 'http://localhost:8080/MovieById';
 })
 export class MovieService {
   movieId: number;
-  // theatreid: number;
+ 
 
   constructor(private httpClient: HttpClient) {}
 

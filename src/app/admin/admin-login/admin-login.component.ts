@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Theatre } from 'src/app/models/theatre';
 import { TheatreService } from 'src/app/services/theatre.service';
@@ -19,6 +18,8 @@ export class AdminLoginComponent implements OnInit {
     public actRoute: ActivatedRoute
   ) {}
   ngOnInit(): void {
+    // TODO document why this method 'ngOnInit' is empty
+  
     
   }
 

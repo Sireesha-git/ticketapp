@@ -5,7 +5,6 @@ import { Booking } from 'src/app/models/booking';
 import { Movie } from 'src/app/models/movie';
 import { User } from 'src/app/models/user';
 import { BookingService } from 'src/app/services/booking.service';
-import { MovieService } from 'src/app/services/movie.service';
 import { PayService } from 'src/app/services/pay.service';
 import { RegistrationService } from 'src/app/services/registration.service';
 
@@ -42,11 +41,11 @@ export class PaymentComponent implements OnInit {
 
 
   onSubmit() {
-    var paymentJson = JSON.stringify(this.form.value);
+    let paymentJson = JSON.stringify(this.form.value);
     this.payService.paymentCheck(paymentJson).subscribe((data) => {
       if (data == true) {
         alert('Payment Successful .. ');
-        var jsonData = JSON.parse(paymentJson);
+        let jsonData = JSON.parse(paymentJson);
         this.storePayment(jsonData['paying']);
         console.log(this.book.bookingid);
         this.route.navigateByUrl(`overview/${this.customer.customerid}/${this.book.bookingid}`);

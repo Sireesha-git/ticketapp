@@ -14,11 +14,14 @@ export class AdminSignupComponent implements OnInit {
 
   constructor(private service: RegistrationService, private _router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void { 
+    /* TODO document why this method 'ngOnInit' is empty */ 
+    
+  }
   registration() {
     this.service.saveTheatre(this.theatre).subscribe({
       next: (data) => {
-        (this.message = data), this._router.navigate(['/theatre']);
+        (this.message = data); this._router.navigate(['/theatre']);
       },
     });
   }

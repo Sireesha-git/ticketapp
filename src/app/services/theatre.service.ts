@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Theatre } from '../models/theatre';
 
 const baseUrl = 'http://localhost:8080/TheatreBy';
-
+const getUrl = 'http://localhost:8080/Revenue';
 @Injectable({
   providedIn: 'root',
 })
@@ -18,5 +18,12 @@ export class TheatreService {
   }
   findMoviesById(theatreid: number): Observable<Theatre> {
     return this._http.get<Theatre>(`${baseUrl}/${theatreid}`);
+  }
+  calculateRenterRevenue(
+    theatreid: number,
+    bookingDate: Date,
+    enddate: Date
+  ): Observable<any> {
+    return this._http.get(`${getUrl}/${theatreid}/${bookingDate}/${enddate}`);
   }
 }
